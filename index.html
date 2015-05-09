@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <title>YearBook - Login</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="estilo.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <header>
+        <h1>Yearbook - Login</h1>
+        </header>
+        
+        
+<style type="text/css">
+      body {
+        padding-bottom: 40px;
+        /*background-color: #f5f5f5;*/
+      }
+
+      .corpo {
+       background-color: #f5f5f5;
+      }
+
+      .form-signin {
+        max-width: 300px;
+        padding: 19px 29px 29px;
+        margin: 20px auto 20px;
+        background-color: #fff;
+        border: 1px solid #e5e5e5;
+        -webkit-border-radius: 5px;
+           -moz-border-radius: 5px;
+                border-radius: 5px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+                box-shadow: 0 1px 2px rgba(0,0,0,.05);
+      }
+      .form-signin .form-signin-heading,
+      .form-signin .checkbox {
+        margin-bottom: 10px;
+      }
+      .form-signin input[type="text"],
+      .form-signin input[type="password"] {
+        font-size: 16px;
+        height: auto;
+          margin-top: 10px;
+        margin-bottom: 15px;
+        padding: 7px 9px;
+      }
+
+      .validation-summary-errors {
+    color: #e80c4d;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+    </style>
+        
+        <div class="container">
+
+      <form method="post" action="./Verificarlogin.php" class="form-signin" role="form">
+        <h2 class="form-signin-heading text-center">Faça seu login</h2>
+        
+		<input type="login" name="login" class="form-control" placeholder="login" required autofocus>
+        
+		<input type="password" name="password" class="form-control" placeholder="Senha" required>
+        
+		<label class="checkbox">
+          <input type="checkbox" name="lembrar" value="lembrar-login"> Lembrar login
+        </label>
+        
+		<button class="btn btn-lg btn-primary btn-block" type="submit">Enviar</button>
+      </form>
+    
+       <p style="text-align: center"><a class="btn btn-info" href="cadastrarAluno.php">Faça aqui seu cadastro</a></p>
+               
+    </div>        
+        
+        <footer>
+            <p>Desenvolvido por Klaisler Antunes Santos</p>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,115 @@
+html{
+    background-color: #FFF;
+}
+
+header{
+    background-color: #0084B4;
+    border-radius: 10px;
+    padding: 2px;
+    text-align: center;
+    color: #FFF;    
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+h2{
+    color: #0084B4;
+}
+
+h3{
+    margin: 3px;
+    text-align: center;
+}
+
+img {
+    border-radius: 10px;
+    border-style: none;
+    border-color: #FFF; 
+}
+
+img.mini{
+    width: 120px; 
+    height: 160px; 
+    margin: 10px;
+}
+
+figure.mini{
+    width: 150px;
+}
+
+img.detalhes{
+    width: 240px;
+    height: 320px; 
+}
+
+figure.detalhes{
+    width: 250px;
+}
+
+figcaption{
+    font-size: smaller;
+    font-style: italic;
+    text-align: center;
+}
+
+ul{
+    list-style-type: none;
+    display: inline;
+}
+
+li{
+    float: left; 
+}
+
+.btnVoltar  {
+    border-style: solid;
+    border-color: #0084B4;
+    background-color: #f5f8f8;
+    text-align: center;
+    border-radius: 5px;
+    padding: 2px 25px;
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+.btnVoltar  a{
+    color: #0084B4;
+    font-weight: bold;
+    width: auto;
+    text-decoration: none;
+}
+
+.alunos{
+    width: 250px;
+    height: 250px;
+    margin: 10px;
+    padding: 5px;
+    text-align: center;
+}
+
+.aluno_detalhes{
+    width: 600px;
+    height: auto;
+    margin: 10px;
+    padding: 5px;
+    text-align: justify;
+}
+
+footer{
+    clear: both;
+    text-align: center;
+    color: #CDCDCD;
+    font-weight: bold;
+    font-size: small;
+    padding-top: 10px;
+}
+
+.cadastro{
+    width: 500px;
+    height: auto;
+    margin: 20px;
+    padding: 5px;
+}
