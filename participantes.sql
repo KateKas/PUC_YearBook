@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.12
+-- version 4.3.8
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: 26-Maio-2014 às 05:53
--- Versão do servidor: 5.6.16
--- PHP Version: 5.5.11
+-- Client :  localhost
+-- Généré le :  Dim 10 Mai 2015 à 06:43
+-- Version du serveur :  5.5.42-37.1
+-- Version de PHP :  5.4.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,60 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `daw_yearbook`
+-- Base de données :  `kate_Yearbook`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `participantes`
+-- Structure de la table `cidades`
+--
+
+CREATE TABLE IF NOT EXISTS `cidades` (
+  `idCidade` int(11) NOT NULL,
+  `idEstado` int(11) NOT NULL,
+  `nomeCidade` varchar(70) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `cidades`
+--
+
+INSERT INTO `cidades` (`idCidade`, `idEstado`, `nomeCidade`) VALUES
+(1, 1, 'Belo Horizonte'),
+(2, 1, 'AraxÃƒÂ¡'),
+(3, 2, 'BrasÃƒÂ­lia'),
+(4, 3, 'Rio de Janeiro'),
+(5, 1, 'Barbacena'),
+(6, 1, 'AlvinÃƒÂ³polis'),
+(7, 1, 'PoÃƒÂ§o Fundo');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `estados`
+--
+
+CREATE TABLE IF NOT EXISTS `estados` (
+  `idEstado` int(11) NOT NULL,
+  `sigaEstado` char(2) NOT NULL,
+  `nomeEstado` varchar(50) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `estados`
+--
+
+INSERT INTO `estados` (`idEstado`, `sigaEstado`, `nomeEstado`) VALUES
+(1, 'MG', 'Minas Gerais'),
+(2, 'DF', 'Distrito Federal'),
+(3, 'RJ', 'Rio de Janeiro'),
+(4, 'SP', 'SÃƒÂ£o Paulo');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `participantes`
 --
 
 CREATE TABLE IF NOT EXISTS `participantes` (
@@ -33,12 +80,11 @@ CREATE TABLE IF NOT EXISTS `participantes` (
   `arquivoFoto` varchar(50) NOT NULL,
   `cidade` int(11) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `descricao` varchar(5000) NOT NULL,
-  PRIMARY KEY (`login`)
+  `descricao` varchar(5000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `participantes`
+-- Contenu de la table `participantes`
 --
 
 INSERT INTO `participantes` (`login`, `senha`, `nomeCompleto`, `arquivoFoto`, `cidade`, `email`, `descricao`) VALUES
@@ -53,8 +99,45 @@ INSERT INTO `participantes` (`login`, `senha`, `nomeCompleto`, `arquivoFoto`, `c
 ('Leonardo', '81dc9bdb52d04dc20036dbd8313ed055', 'Leonardo Cabral', 'fotos/Leonardo.jpeg', 1, 'mail@larback.com.br', '&quot;In google we trust&quot;'),
 ('Nikolas', '81dc9bdb52d04dc20036dbd8313ed055', 'Nikolas Rodrigues Teixeira', 'fotos/Nikolas.jpg', 1, 'nikolasrod@gmail.com', 'Formado em AnÃƒÂ¡lise e Desenvolvimento de Sistemas, programador Python na empresa Starline Tecnologia. Chrome ÃƒÂ© o melhor navegador, nÃƒÂ£o odeio o Windows 8, Android ÃƒÂ© melhor que iOS, Xbox ÃƒÂ© melhor que PS3. :)'),
 ('nilson', '81dc9bdb52d04dc20036dbd8313ed055', 'Nilson Aparecido Teodoro', 'fotos/Nilson.jpg', 2, 'nilsonkz22@gmail.com', 'Formado em Sistemas de informaÃƒÂ§ÃƒÂ£o pela Universidade de AraxÃƒÂ¡, onde concluÃƒÂ­ o mesmo em Dezembro de 2010. Atuo como Analista de Sistemas desde 2010, onde iniciei como DBA, e atualmente sou desenvolvedor ASP.Net. Optar por essa pÃƒÂ³s-graduaÃƒÂ§ÃƒÂ£o foi imediata, pois irei adquirir e quem sabe repassar conhecimentos, construir novas alianÃƒÂ§as, e claro sempre buscando novos desafios.\r\n'),
-('Rodrigo', '81dc9bdb52d04dc20036dbd8313ed055', 'Rodrigo Batista Balthazar', 'fotos/rodrigobalthazar.jpg', 3, 'rodrigobalthazar@yahoo.com', 'OlÃƒÂ¡, sou engenheiro eletricista e entusiasta na ÃƒÂ¡rea de linguÃƒÂ­stica. AlÃƒÂ©m dessas ÃƒÂ¡reas, tenho interesse em diversas outras, como a mÃƒÂºsica, o canto, a literatura, as artes marciais e a corrida, para as quais jÃƒÂ¡ dediquei ou dedico certo tempo em minha vida.');
+('Rodrigo', '81dc9bdb52d04dc20036dbd8313ed055', 'Rodrigo Batista Balthazar', 'fotos/rodrigobalthazar.jpg', 3, 'rodrigobalthazar@yahoo.com', 'OlÃƒÂ¡, sou engenheiro eletricista e entusiasta na ÃƒÂ¡rea de linguÃƒÂ­stica. AlÃƒÂ©m dessas ÃƒÂ¡reas, tenho interesse em diversas outras, como a mÃƒÂºsica, o canto, a literatura, as artes marciais e a corrida, para as quais jÃƒÂ¡ dediquei ou dedico certo tempo em minha vida.'),
+('teste', '09151a42659cfc08aff86820f973f640', 'teste', 'fotos/1538896_728495137162897_437210503_n.jpg', 1, 'teste@teste.com', 'testesteste');
 
+--
+-- Index pour les tables exportées
+--
+
+--
+-- Index pour la table `cidades`
+--
+ALTER TABLE `cidades`
+  ADD PRIMARY KEY (`idCidade`);
+
+--
+-- Index pour la table `estados`
+--
+ALTER TABLE `estados`
+  ADD PRIMARY KEY (`idEstado`), ADD UNIQUE KEY `sigaEstado` (`sigaEstado`);
+
+--
+-- Index pour la table `participantes`
+--
+ALTER TABLE `participantes`
+  ADD PRIMARY KEY (`login`);
+
+--
+-- AUTO_INCREMENT pour les tables exportées
+--
+
+--
+-- AUTO_INCREMENT pour la table `cidades`
+--
+ALTER TABLE `cidades`
+  MODIFY `idCidade` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT pour la table `estados`
+--
+ALTER TABLE `estados`
+  MODIFY `idEstado` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
