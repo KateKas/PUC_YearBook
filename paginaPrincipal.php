@@ -1,7 +1,7 @@
 <?php
 require_once("./autenticar.php");
 require_once("./conf/BD.php");
-include_once("/modelos/cabecalho.html");
+include_once("./modelos/cabecalho.html");
 
 ?>
 
@@ -97,6 +97,6 @@ try{
 
     </div>
 
-<?  php
-include_once("/modelos/rodape.html");
+<?php
+include_once("./modelos/rodape.html");
 ?>
